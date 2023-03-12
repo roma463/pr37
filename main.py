@@ -14,18 +14,18 @@ Builder.load_file('test.kv')
 Window.size = (360, 800)
 
 
-questions = ["вопрос1","вопрос 2", "вопрос 3",
-            "вопрос1","вопрос 2", "вопрос 3",
-            "вопрос1","вопрос 2", "вопрос 3",
-            "вопрос1","вопрос 2", "вопрос 3",
-            "вопрос1","вопрос 2", "вопрос 3",
-            "вопрос1","вопрос 2", "вопрос 3",
-            "вопрос1","вопрос 2"]
-questionsImage = ["12.png","goblin.jpeg", "start.jpeg",
-                "12.png","goblin.jpeg","start.jpeg",
-                "12.png","goblin.jpeg", "start.jpeg",
-                "12.png","goblin.jpeg", "start.jpeg",
-                "12.png","goblin.jpeg", "start.jpeg",
+questions = ["Вам нравится быть в центре внимания?","Выберите украшение", "В вашем гардеробе больше всего вешей этого цвета",
+            "какое качество больше всего подходит вам","Самая привлекательная для вас сфера деятельности", "как вы приводите совю фиуру в порядок",
+            "Любимое десткое развлечение","каоке из человечских качеств вам кажется наиболее важным", "какой цвет вы выбираете",
+            "Если бы вы стали катастрофой, чем бы вы стали после смерти","Во просите помощи во вселенной?", "Какое ваше любимое время года?",
+            "какая погода может привести вас в восторг","как бы вы провели выходной", "на какой планете вы хотели бы побывать?",
+            "любимый фрукт","какую социальную сеть ты виберешь?", "Твоя любимая газировка?",
+            "ваш любимый движок","кто вы по типу темперамента?"]
+questionsImage = ["17199-705-0.jpg","1590499068_21.jpg", "1637746724_1-gamerwall-pro-p-oboi-v-stile-kosmos-oboi-na-rabochii-stol-1.jpg",
+                "1669943287_1-pibig-info-p-kosmicheskie-oboi-oboi-1.jpg","goblin.jpeg","kosmonavt_luna_otdyh_1920x1200-650x406-1.jpg",
+                "756034651068899.jpg","Без названия.jpeg", "Без названия (3).jpeg",
+                "Без названия (2).jpeg","Без названия (1).jpeg", "solnechnaia-sistema-vselennaia-galaktika-planety-zviozdy-2.jpg",
+                "planeta-kosmos-asteroidov-oskolki.jpg","nBkSUhL2hFcinc-1Ib6BrNOp2Z3z8Zj21iDEh_fH_nKUPXuaDyXTjHou4MVO6BCVoZKf9GqVe5Q_CPawk214LyWK9G1N5ho=JEDAGaQ9GuUcjvj2-JHDCw.jpg", "kosmonavt_luna_otdyh_1920x1200-650x406-1.jpg",
                 "12.png","goblin.jpeg", "start.jpeg"
                 "12.png","goblin.jpeg"]
 
@@ -62,12 +62,12 @@ class TestWidget(Widget):
             i = random.randrange(0,len(questions),1)
             img.source = (questionsImage[i])
             self.ids.input.text = questions[i]
-            questionsImage.remove(questionsImage[i])
-            questions.remove(questions[i])
+            questionsImage.pop(i)
+            questions.pop(i)
             summ = summ + int(string)
             
             arrayOtvet = variants_otvet[i]
-            variants_otvet.remove(variants_otvet[i])
+            variants_otvet.pop(i)
             self.ids.button1.text = arrayOtvet[0]
             self.ids.button2.text = arrayOtvet[1]
             self.ids.button3.text = arrayOtvet[2]
